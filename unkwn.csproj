@@ -15,4 +15,10 @@
     <PackageReference Include="Sparkle" Version="3.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+        <Content Include="content/**/*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
 </Project>

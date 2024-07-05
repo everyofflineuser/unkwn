@@ -1,6 +1,5 @@
 ﻿using Sparkle.CSharp.Overlays;
 using Raylib_cs;
-using Sparkle.CSharp.Rendering;
 
 namespace unkwn.Overlays;
 

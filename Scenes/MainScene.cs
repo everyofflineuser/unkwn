@@ -4,6 +4,7 @@ using Sparkle.CSharp.Physics;
 using Sparkle.CSharp.Rendering.Helpers;
 using Sparkle.CSharp.Scenes;
 using System.Numerics;
+using unkwn.Entities;
 
 namespace unkwn.Scenes;
 public class MainScene : Scene
@@ -19,6 +20,9 @@ public class MainScene : Scene
         Vector3 pos = new Vector3(10.0f, 10.0f, 10.0f);
         Cam3D cam3D = new Cam3D(pos, Vector3.Zero, Vector3.UnitY, 90, CameraProjection.Perspective, CameraMode.Orbital);
         this.AddEntity(cam3D);
+
+        TestEntity testEntity = new TestEntity(new Vector3(0f,0f,0f));
+        this.AddEntity(testEntity);
     }
 
     protected override void Draw()

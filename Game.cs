@@ -1,4 +1,6 @@
-﻿using Sparkle.CSharp;
+﻿using Raylib_cs;
+using Sparkle.CSharp;
+using Sparkle.CSharp.Content.Types;
 using Sparkle.CSharp.GUI;
 using Sparkle.CSharp.Overlays;
 using Sparkle.CSharp.Windowing;
@@ -9,6 +11,7 @@ namespace unkwn;
 public class BaseGame : Game
 {
     private string _title;
+    public static Model MapModel;
 
     public BaseGame(GameSettings settings, string title = "unkwn") : base(settings) { this._title = title; }
 
@@ -32,6 +35,7 @@ public class BaseGame : Game
     /// </summary>
     protected override void Load()
     {
+        MapModel = this.Content.Load(new ModelContent("content/models/de_vertigo.glb"));
 
         base.Load();
     }
