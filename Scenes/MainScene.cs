@@ -17,7 +17,7 @@ public class MainScene : Scene
         base.Init();
 
         Vector3 pos = new Vector3(10.0f, 10.0f, 10.0f);
-        Cam3D cam3D = new Cam3D(pos, Vector3.Zero, Vector3.UnitY, 70, CameraProjection.Perspective, CameraMode.Orbital);
+        Cam3D cam3D = new Cam3D(pos, Vector3.Zero, Vector3.UnitY, 90, CameraProjection.Perspective, CameraMode.Orbital);
         this.AddEntity(cam3D);
     }
 

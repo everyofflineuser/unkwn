@@ -1,20 +1,16 @@
-﻿using OpenTK.Graphics.Wgl;
-using Raylib_cs;
-using Sparkle.CSharp;
-using Sparkle.CSharp.Content.Types;
-using Sparkle.CSharp.IO.Configs.Json;
-using Sparkle.CSharp.Rendering;
-using Sparkle.CSharp.Rendering.Helpers;
+﻿using Sparkle.CSharp;
+using Sparkle.CSharp.GUI;
+using Sparkle.CSharp.Overlays;
 using Sparkle.CSharp.Windowing;
-using System.Numerics;
-using System.Text.RegularExpressions;
+using unkwn.GUI;
+using unkwn.Overlays;
 
 namespace unkwn;
 public class BaseGame : Game
 {
-    private string title;
+    private string _title;
 
-    public BaseGame(GameSettings settings, string title = "unkwn") : base(settings) { this.title = title; }
+    public BaseGame(GameSettings settings, string title = "unkwn") : base(settings) { this._title = title; }
 
     /// <summary>
     /// Used for Initializes objects.
@@ -22,7 +18,11 @@ public class BaseGame : Game
     protected override void Init()
     {
         Logger.Info("Test MSG");
-        Window.SetTitle(title);
+        Window.SetTitle(_title);
+        //GuiManager.SetGui(new TestGUI());
+        TestOverlay myOverlay = new TestOverlay();
+        myOverlay.Enabled = true;
+        OverlayManager.Add(myOverlay);
 
         base.Init();
     }
@@ -32,7 +32,6 @@ public class BaseGame : Game
     /// </summary>
     protected override void Load()
     {
-        
 
         base.Load();
     }
@@ -42,6 +41,8 @@ public class BaseGame : Game
     /// </summary>
     protected override void Update()
     {
+        Window.SetTitle(_title + $" | {Time.Fps} FPS");
+
         base.Update();
     }
 
@@ -67,7 +68,7 @@ public class BaseGame : Game
     /// </summary>
     protected override void Draw()
     {
-        Window.SetTitle(title + $" | {Time.Fps} FPS");
+        //_frames++;
 
         base.Draw();
     }
