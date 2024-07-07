@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sparkle" Version="3.0.2" />
+    <PackageReference Include="Sparkle" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>

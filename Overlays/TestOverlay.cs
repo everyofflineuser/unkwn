@@ -1,5 +1,6 @@
 ﻿using Sparkle.CSharp.Overlays;
-using Raylib_cs;
+using Raylib_CSharp.Rendering;
+using Raylib_CSharp.Colors;
 
 namespace unkwn.Overlays;
 
@@ -30,7 +31,7 @@ public class TestOverlay : Overlay
 
     protected override void Draw() 
     {
-        Raylib.DrawFPS(0,0);
-        Raylib.DrawText("TEST TEXT", 0, 100, 26, Color.White);
+        Graphics.DrawFPS(0,0);
+        Graphics.DrawText("TEST TEXT", 0, 100, 26, Color.White);
     }
 }

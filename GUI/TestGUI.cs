@@ -1,9 +1,9 @@
 ﻿using Sparkle.CSharp.GUI.Elements.Data;
 using Sparkle.CSharp.GUI.Elements;
 using Sparkle.CSharp.GUI;
-using Sparkle.CSharp.Rendering.Helpers;
-using Raylib_cs;
 using System.Numerics;
+using Raylib_CSharp.Fonts;
+using Raylib_CSharp.Colors;
 
 namespace unkwn.GUI;
 
@@ -18,7 +18,7 @@ public class TestGUI : Gui
 
         LabelData labelData = new LabelData()
         {
-            Font = FontHelper.GetDefault(),
+            Font = Font.GetDefault(),
             FontSize = 50,
             Spacing = 4,
             Text = "LABEL!",

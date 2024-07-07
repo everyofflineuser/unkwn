@@ -1,10 +1,10 @@
-﻿using Raylib_cs;
+﻿using Raylib_CSharp;
+using Raylib_CSharp.Geometry;
+using Raylib_CSharp.Windowing;
 using Sparkle.CSharp;
-using Sparkle.CSharp.Content.Types;
-using Sparkle.CSharp.GUI;
+using Sparkle.CSharp.Logging;
 using Sparkle.CSharp.Overlays;
-using Sparkle.CSharp.Windowing;
-using unkwn.GUI;
+using Sparkle.CSharp.Registries;
 using unkwn.Overlays;
 
 namespace unkwn;
@@ -14,6 +14,12 @@ public class BaseGame : Game
     public static Model MapModel;
 
     public BaseGame(GameSettings settings, string title = "unkwn") : base(settings) { this._title = title; }
+
+    protected override void OnRun()
+    {
+        base.OnRun();
+        RegistryManager.AddType(new ContentRegistry());
+    }
 
     /// <summary>
     /// Used for Initializes objects.
@@ -35,8 +41,6 @@ public class BaseGame : Game
     /// </summary>
     protected override void Load()
     {
-        MapModel = this.Content.Load(new ModelContent("content/models/de_vertigo.glb"));
-
         base.Load();
     }
 
@@ -45,7 +49,7 @@ public class BaseGame : Game
     /// </summary>
     protected override void Update()
     {
-        Window.SetTitle(_title + $" | {Time.Fps} FPS");
+        Window.SetTitle(_title + $" | {Time.GetFPS()} FPS");
 
         base.Update();
     }

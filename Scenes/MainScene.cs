@@ -1,7 +1,8 @@
-﻿using Raylib_cs;
+﻿using Raylib_CSharp.Camera.Cam3D;
+using Raylib_CSharp.Geometry;
+using Raylib_CSharp.Rendering;
 using Sparkle.CSharp.Entities;
-using Sparkle.CSharp.Physics;
-using Sparkle.CSharp.Rendering.Helpers;
+using Sparkle.CSharp.Physics.Dim3;
 using Sparkle.CSharp.Scenes;
 using System.Numerics;
 using unkwn.Entities;
@@ -9,7 +10,7 @@ using unkwn.Entities;
 namespace unkwn.Scenes;
 public class MainScene : Scene
 {
-    public MainScene(string name = "MainScene", SceneType type = SceneType.Scene3D, PhysicsSettings? settings = null) : base(name, type, settings)
+    public MainScene(string name = "MainScene", SceneType type = SceneType.Scene3D, Simulation3D? settings = null) : base(name, type, settings)
     {
     }
 
@@ -27,15 +28,9 @@ public class MainScene : Scene
 
     protected override void Draw()
     {
+
+        //Graphics.DrawGrid(100, 1);
+
         base.Draw();
-
-        // BEGIN 3D
-        SceneManager.MainCam3D!.BeginMode3D();
-
-        //DRAW GIRD
-        ModelHelper.DrawGrid(100, 1);
-
-        // END 3D
-        SceneManager.MainCam3D.EndMode3D();
     }
 }
