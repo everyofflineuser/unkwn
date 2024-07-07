@@ -25,12 +25,13 @@ public class BaseGame : Game
     /// </summary>
     protected override void Init()
     {
-        Logger.Info("Test MSG");
+        //Logger.Info("Test MSG");
         Window.SetTitle(_title);
         //GuiManager.SetGui(new TestGUI());
+
         TestOverlay myOverlay = new TestOverlay();
         myOverlay.Enabled = true;
-        OverlayManager.Add(myOverlay);
+         OverlayManager.Add(myOverlay);
 
         base.Init();
     }
