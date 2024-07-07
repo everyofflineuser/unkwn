@@ -11,7 +11,6 @@ namespace unkwn;
 public class BaseGame : Game
 {
     private string _title;
-    public static Model MapModel;
 
     public BaseGame(GameSettings settings, string title = "unkwn") : base(settings) { this._title = title; }
 
